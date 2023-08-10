@@ -1,0 +1,69 @@
+.followers-container {
+  width: 250px;
+  height: 205px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.inner-followers-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 250px;
+  cursor: pointer;
+}
+
+.inner-followers-card {
+  background-color: var(--cardBG);
+  color: var(--lowContrastText);
+}
+
+.facebook {
+  background-color: var(--facebook);
+}
+
+.twitter {
+  background-color: var(--twitter);
+}
+
+.instagram {
+  background: linear-gradient(to right, var(--instagram-yellow), var(--instagram-pink));
+}
+
+.youtube {
+  background-color: var(--youtube);
+}
+
+.user {
+  font-weight: 700;
+}
+
+.user img {
+  margin-bottom: -4px;
+}
+
+.vote-down {
+  color: var(--voteDown);
+  font-weight: 700;
+}
+
+.vote-up {
+  color: var(--voteUp);
+  font-weight: 700;
+}
+
+.vote-up img,
+.vote-down img {
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 700px) {
+  .followers-container,
+  .inner-followers-card {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+}

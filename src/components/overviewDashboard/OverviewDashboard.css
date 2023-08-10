@@ -1,0 +1,32 @@
+.container-overview {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: var(--bg);
+  max-width: 1137px;
+  box-sizing: border-box;
+}
+
+.inner-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container-overview > p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .container-overview > p {
+    margin-left: unset;
+  }
+
+  .overview-wrapper {
+    width: 100%;
+  }
+}

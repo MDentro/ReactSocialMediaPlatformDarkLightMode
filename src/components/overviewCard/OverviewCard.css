@@ -1,0 +1,43 @@
+.overview-container {
+  width: 250px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--cardBG);
+  color: var(--lowContrastText);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+  height: auto;
+  margin-top: 15px;
+}
+
+.left {
+  width: 70%;
+
+  height: 100%;
+}
+.right {
+  width: 30%;
+
+  height: 100%;
+  text-align: right;
+}
+
+.vote {
+  margin-top: 35px;
+}
+
+@media screen and (max-width: 700px) {
+  .overview-container {
+    width: 100%;
+    align-items: center;
+    margin: 0 0 10px 0;
+  }
+}

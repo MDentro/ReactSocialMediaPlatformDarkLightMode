@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+import './App.css'
+import FollowersDashboard from './components/followersDashboard/FollowersDashboard'
+import OverviewDashboard from './components/overviewDashboard/OverviewDashboard'
+import Header from './components/header/Header'
 
 function App() {
+  const [theme, setTheme] = useState('')
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
+    const mode = localStorage.getItem('isDarkMode')
+    if (mode === 'true') {
+      localStorage.setItem('isDarkMode', false)
+    } else {
+      localStorage.setItem('isDarkMode', true)
+    }
+  }
+
+  useEffect(() => {
+    setDarkMode()
+  }, [])
+
+  const setDarkMode = () => {
+    const mode = localStorage.getItem('isDarkMode')
+    if (mode === 'true') {
+      setTheme('dark')
+      document.getElementById('slider').checked = true
+    } else {
+      setTheme('light')
+      document.getElementById('slider').checked = false
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id={theme} data-theme={theme} className="page">
+      <Header toggleTheme={toggleTheme} theme={theme} />
+
+      <FollowersDashboard />
+
+      <OverviewDashboard />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
